@@ -14,6 +14,10 @@ function ProductView({ products }) {
     setSideOpen(true);
   }, [selectedProduct]);
 
+  useEffect(() => {
+    setSelectedProduct();
+  }, [sideOpen]);
+
   return (
     <div className="product-view">
       <div className="product-main-area">
