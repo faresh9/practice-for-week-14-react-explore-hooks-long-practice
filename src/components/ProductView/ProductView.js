@@ -10,12 +10,16 @@ function ProductView({ products }) {
   const [sideOpen, setSideOpen] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState();
 
+  // Open side panel when product is selected
   useEffect(() => {
-    setSideOpen(true);
+    console.log(`selectedProduct CHANGED TO`, selectedProduct);
+    if (selectedProduct) setSideOpen(true);
   }, [selectedProduct]);
 
+  // Deselect product when side panel is closed
   useEffect(() => {
-    setSelectedProduct();
+    console.log(`sideOpen CHANGED TO`, sideOpen);
+    if (!sideOpen) setSelectedProduct();
   }, [sideOpen]);
 
   return (
