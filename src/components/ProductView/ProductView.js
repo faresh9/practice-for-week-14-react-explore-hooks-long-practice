@@ -21,7 +21,7 @@ function ProductView({ products }) {
     console.log(`sideOpen CHANGED TO`, sideOpen);
     if (!sideOpen) setSelectedProduct();
   }, [sideOpen]);
-
+  console.log("ProductView before return");
   return (
     <div className="product-view">
       <div className="product-main-area">
